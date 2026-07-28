@@ -23,4 +23,24 @@ function verificarRespuesta(esCorrecta) {
         resultado.textContent = "Respuesta incorrecta ❌. Inténtalo de nuevo.";
         resultado.style.color = "red";
     }
+}// Lógica del Carrusel
+let indiceImagen = 0;
+
+function moverCarrusel(direccion) {
+    let imagenes = document.querySelectorAll('.carrusel-img');
+    
+    // Ocultar imagen actual
+    imagenes[indiceImagen].classList.remove('active');
+    
+    // Calcule el nuevo índice
+    indiceImagen += direccion;
+    
+    if (indiceImagen >= imagenes.length) {
+        indiceImagen = 0;
+    } else if (indiceImagen < 0) {
+        indiceImagen = imagenes.length - 1;
+    }
+    
+    // Mostrar la nueva imagen
+    imagenes[indiceImagen].classList.add('active');
 }
