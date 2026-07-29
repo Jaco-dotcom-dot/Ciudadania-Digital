@@ -13,5 +13,5 @@ Página web interactiva diseñada para educar sobre la netiqueta, seguridad digi
 * JavaScript (ES6)
 
 ## 📌 Enlace al sitio web
-[Ver proyecto en vivo](https://tu-usuario.github.io/Ciudadania-Digital/)
+[Ver proyecto en vivo](https://jaco-dotcom-dot.github.io/Ciudadania-Digital/)
 
