@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciudadanía Digital</title>
-   <link rel="stylesheet" href="styles.css">
+    <title>Ciudadanía Digital | El Futuro Conectado</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
         <nav class="navbar">
-            <div class="logo">Ciudadanía Digital</div>
+            <div class="logo">Ciudadanía<span>Digital</span></div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#galeria">Galería</a></li>
                 <li><a href="#secciones">Temas</a></li>
                 <li><a href="#buscador">Buscador</a></li>
                 <li><a href="#quiz">Quiz</a></li>
@@ -22,41 +28,50 @@
     </header>
 
     <section id="inicio" class="hero">
-        <h1>Bienvenidos a la Era de la Ciudadanía Digital</h1>
-        <p>Aprende a navegar, interactuar y participar en el entorno digital de manera responsable y segura.</p>
-    </section>
-<section class="container">
-    <h2>Galería de Ciudadanía Digital</h2>
-    <div class="carrusel-container">
-        <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
-        <div class="carrusel-slide">
-            <img src="https://picsum.photos/800/350?random=1" alt="Imagen 1" class="carrusel-img active">
-            <img src="https://picsum.photos/800/350?random=2" alt="Imagen 2" class="carrusel-img">
-            <img src="https://picsum.photos/800/350?random=3" alt="Imagen 3" class="carrusel-img">
+        <div class="hero-content">
+            <h1>Bienvenidos a la Era de la Ciudadanía Digital</h1>
+            <p>Aprende a navegar, interactuar y participar en el entorno digital de manera responsable, ética y segura.</p>
         </div>
-        <button class="carrusel-btn next" onclick="moverCarrusel(1)">&#10095;</button>
+    </section>
+
+ <section id="galeria" class="container">
+    <h2 class="section-title">Galería de Ciudadanía Digital</h2>
+    <div class="carrusel-container">
+        <button type="button" class="carrusel-btn prev" onclick="moverCarrusel(-1)" aria-label="Anterior">&#10094;</button>
+        
+        <div class="carrusel-slide">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Imagen 1" class="carrusel-img active">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop" alt="Imagen 2" class="carrusel-img">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop" alt="Imagen 3" class="carrusel-img">
+        </div>
+        
+        <button type="button" class="carrusel-btn next" onclick="moverCarrusel(1)" aria-label="Siguiente">&#10095;</button>
     </div>
 </section>
 
     <section id="secciones" class="container">
-        <h2>Secciones Informativas</h2>
+        <h2 class="section-title">Secciones Informativas</h2>
         <div class="cards-grid" id="tarjetas-container">
             <article class="card" data-category="derechos">
+                <div class="card-badge">Derechos</div>
                 <h3>Derechos Digitales</h3>
                 <p>Todos los usuarios tienen derecho a la privacidad, a la libertad de expresión y al acceso seguro a la información en línea.</p>
             </article>
 
             <article class="card" data-category="deberes">
+                <div class="card-badge">Netiqueta</div>
                 <h3>Obligaciones y Netiqueta</h3>
                 <p>Respetar a los demás usuarios, no difundir noticias falsas (fake news) y mantener un trato afable en redes sociales.</p>
             </article>
 
             <article class="card" data-category="seguridad">
+                <div class="card-badge">Seguridad</div>
                 <h3>Seguridad y Privacidad</h3>
                 <p>Uso de contraseñas seguras, verificación en dos pasos y protección de datos personales ante ciberamenazas.</p>
             </article>
 
             <article class="card" data-category="huella">
+                <div class="card-badge">Identidad</div>
                 <h3>Huella Digital</h3>
                 <p>Toda acción que realizas en internet deja un rastro. Gestiona tus publicaciones para proteger tu identidad futura.</p>
             </article>
@@ -64,12 +79,14 @@
     </section>
 
     <section id="buscador" class="container dark-bg">
-        <h2>Buscador de Contenido</h2>
-        <input type="text" id="inputBuscador" placeholder="Escribe un tema (ej. seguridad, derechos)...">
+        <h2 class="section-title">Buscador de Contenido</h2>
+        <div class="search-box">
+            <input type="text" id="inputBuscador" placeholder="Escribe un tema (ej. seguridad, derechos, huella)...">
+        </div>
     </section>
 
     <section id="quiz" class="container">
-        <h2>Autoevaluación de Ciudadanía Digital</h2>
+        <h2 class="section-title">Autoevaluación Digital</h2>
         <div class="quiz-box">
             <p id="pregunta">¿Qué es la Netiqueta?</p>
             <div class="opciones">
@@ -77,24 +94,42 @@
                 <button onclick="verificarRespuesta(true)">B) El conjunto de normas de comportamiento en red</button>
                 <button onclick="verificarRespuesta(false)">C) Una marca de computadoras</button>
             </div>
-            <p id="resultado-quiz"></p>
+            <div id="resultado-quiz" class="resultado-box"></div>
         </div>
     </section>
 
     <section id="contacto" class="container dark-bg">
-        <h2>Formulario de Contacto</h2>
+        <h2 class="section-title">Formulario de Contacto</h2>
         <form class="form-contacto" onsubmit="event.preventDefault(); alert('Mensaje enviado con éxito');">
             <input type="text" placeholder="Nombre completo" required>
             <input type="email" placeholder="Correo electrónico" required>
             <textarea placeholder="Escribe tu mensaje..." rows="4" required></textarea>
-            <button type="submit">Enviar</button>
+            <button type="submit" class="btn-submit">Enviar Mensaje</button>
         </form>
-    </section>
+   </section>
 
     <footer>
-        <p>&copy; Proyecto Ciudadanía Digital - Todos los derechos reservados.</p>
+        <p>&copy; Proyecto Ciudadanía Digital - Diseñado para la era <span>Cyber-Futurista</span>.</p>
     </footer>
 
-    <script src="js/main.js"></script>
+   <script>
+    let indiceImagen = 0;
+
+    function moverCarrusel(direccion) {
+        let imagenes = document.querySelectorAll('.carrusel-img');
+        if (imagenes.length === 0) return;
+
+        imagenes[indiceImagen].classList.remove('active');
+        indiceImagen += direccion;
+
+        if (indiceImagen >= imagenes.length) {
+            indiceImagen = 0;
+        } else if (indiceImagen < 0) {
+            indiceImagen = imagenes.length - 1;
+        }
+
+        imagenes[indiceImagen].classList.add('active');
+    }
+</script>
 </body>
 </html>
